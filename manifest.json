@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "Search History Log",
+  "version": "1.1",
+  "description": "Record a chrome browser search history",
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com https://apis.google.com; object-src 'self'",
+  "permissions": [
+    "history",
+    "identity",
+    "declarativeContent",
+    "tabs",
+    "activeTab",
+    "storage",
+    "unlimitedStorage",
+    "tabs",
+    "background",
+    "notifications",
+    "idle",
+    "http://*/",
+    "https://*/",
+    "https://console.firebase.google.com/*",
+    "alarms"
+  ],
+  "browser_action": {
+    "default_icon": "./images/ext_icon.png",
+    "default_popup": "./views/background.html",
+    "default_title": "Search History Log"
+  },
+  "background": {
+    "scripts": [
+      "./js/pouchdb-7.1.1.min.js",
+      "./js/jquery.min.js",
+      "./js/background.js",
+      "./js/session.js",
+      "./js/reports.js"
+    ],
+    "persistent": false
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjeaoXWrebk9ZHTGFcFAYKNX58u+XdvchPn5cGXoKNadYWcdDDzgIBNi5wjJKbaWncvo/zbpnK5g1I3qmY1eK2x0/L9QymLi95YXu+hSCUjm+MPjqXbakcSUClNB26asIL7Q8g8PneHEMEDy3kSlwHEuAsVTJ8gNN1mMtVnf2snM8LsUL5sol180AUYcIyhKiOURKNzhWabLuN82IL8jzS9c+xoPxxbGm+CCbqXgguVGRgubV6scZEwu9CD++CXG7ZC1FOMKf2Rksr8+9ByW2vqMpjl6xaTzqRG08pZ9nfVZNV1G+BU+GJjSHwv8Yxu7X2kNdl/TbObjeEEvmQ/xveQIDAQAB",
+  "oauth2": {
+    "client_id": "952568695175-fautovjtrf0vpq3qrdkv2rsd5c8g82v5.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/drive"
+    ]
+  }
+}
